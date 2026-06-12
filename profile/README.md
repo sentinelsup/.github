@@ -51,11 +51,11 @@ Sentinel combines network analysis with device fingerprinting to catch what they
 ## Quick start
 
 ```bash
-npm install @sentinel/sdk
+npm install @sentinelsup/sdk
 ```
 
 ```js
-const Sentinel = require('@sentinel/sdk');
+const Sentinel = require('@sentinelsup/sdk');
 const sentinel = new Sentinel({ apiKey: process.env.SENTINEL_KEY });
 
 const result = await sentinel.evaluate({ token: req.body.sentinelToken });
@@ -82,7 +82,6 @@ if (result.isSuspicious) return res.status(403).end();
 ## Stay in the loop
 
 - 🐦 [@SentinelSup on X](https://x.com/SentinelSup)
-- 💼 [Founder on LinkedIn](https://www.linkedin.com/in/raigo-mets-9b6268402/)
 - 📬 [support@sntlhq.com](mailto:support@sntlhq.com)
 
 ---
