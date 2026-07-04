@@ -66,10 +66,10 @@ if (result.isSuspicious) return res.status(403).end();
 
 | Use case | What it stops |
 |----------|---------------|
-| [Stripe checkout](https://sntlhq.com/blog/stripe-fraud-detection-api) | Card testing, chargeback-prone sessions |
+| [Stripe checkout](https://sntlhq.com/blog/card-testing-attacks) | Card testing, chargeback-prone sessions |
 | [Shopify drops](https://sntlhq.com/blog/shopify-bot-detection) | Sneaker bots, scalpers, scrapers |
 | [SaaS signup](https://sntlhq.com/blog/oauth-signup-fraud) | Multi-accounting, bonus abuse, fake Google sign-ins |
-| [Fintech KYC](https://sntlhq.com/blog/fintech-fake-account-fraud) | Synthetic identities, proxy-masked applications |
+| [Fintech KYC](https://sntlhq.com/case-studies/fintech-fake-accounts) | Synthetic identities, proxy-masked applications |
 
 ## Comparisons
 
