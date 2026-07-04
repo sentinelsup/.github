@@ -50,6 +50,8 @@ Sentinel combines network analysis with device fingerprinting to catch what they
 
 ## Quick start
 
+**Node.js** — [`@sentinelsup/sdk`](https://github.com/sentinelsup/sentinel-node) [![npm](https://img.shields.io/npm/v/@sentinelsup/sdk.svg)](https://www.npmjs.com/package/@sentinelsup/sdk)
+
 ```bash
 npm install @sentinelsup/sdk
 ```
@@ -61,6 +63,25 @@ const sentinel = new Sentinel({ apiKey: process.env.SENTINEL_KEY });
 const result = await sentinel.evaluate({ token: req.body.sentinelToken });
 if (result.isSuspicious) return res.status(403).end();
 ```
+
+**Python** — [`sentinelsup`](https://github.com/sentinelsup/sentinel-python) [![PyPI](https://img.shields.io/pypi/v/sentinelsup.svg)](https://pypi.org/project/sentinelsup/)
+
+```bash
+pip install sentinelsup
+```
+
+```python
+from sentinel import Sentinel
+
+sentinel = Sentinel()  # reads SENTINEL_API_KEY
+result = sentinel.evaluate(token=request.json["sentinelToken"])
+if result.is_blocked:
+    abort(403)
+```
+
+**Any other stack** — point your AI coding assistant at
+[`sntlhq.com/integrate.md`](https://sntlhq.com/integrate.md) and it wires the
+integration for you, or call `POST /v1/evaluate` directly ([API docs](https://sntlhq.com/api)).
 
 ## Where Sentinel fits
 
