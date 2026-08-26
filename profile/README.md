@@ -49,8 +49,9 @@ Maskbreak combines network analysis with device fingerprinting to catch what the
 | Node.js | [`maskbreak-node`](https://github.com/sentinelsup/maskbreak-node) | [![npm](https://img.shields.io/npm/v/@sentinelsup/sdk.svg?label=%40sentinelsup%2Fsdk)](https://www.npmjs.com/package/@sentinelsup/sdk) |
 | Python | [`maskbreak-python`](https://github.com/sentinelsup/maskbreak-python) | [![PyPI](https://img.shields.io/pypi/v/sentinelsup.svg?label=sentinelsup)](https://pypi.org/project/sentinelsup/) |
 | PHP | [`maskbreak-php`](https://github.com/sentinelsup/maskbreak-php) | [![Packagist](https://img.shields.io/packagist/v/sentinelsup/sdk.svg?label=sentinelsup%2Fsdk)](https://packagist.org/packages/sentinelsup/sdk) |
+| MCP server | [`maskbreak-mcp`](https://github.com/sentinelsup/maskbreak-mcp) | [![npm](https://img.shields.io/npm/v/@sentinelsup/mcp.svg?label=%40sentinelsup%2Fmcp)](https://www.npmjs.com/package/@sentinelsup/mcp) |
 
-All three are zero-dependency and MIT licensed. Package names keep the
+The three SDKs are zero-dependency; everything here is MIT licensed. Package names keep the
 `sentinelsup` prefix from before the rename — renaming a published package
 breaks every existing install.
 
