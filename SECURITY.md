@@ -1,43 +1,31 @@
 # Security Policy
 
-## Reporting a vulnerability
+**The full policy lives at
+[maskbreak.com/responsible-disclosure](https://maskbreak.com/responsible-disclosure).**
+That page is authoritative — scope, response targets, safe harbour and
+coordinated-disclosure terms are all defined there. This file exists so GitHub
+has something to point at; it deliberately does not restate the policy, because
+two copies drift.
 
-Email **support@maskbreak.com** with `SECURITY` in the subject. Please include
-enough detail to reproduce: affected endpoint or package, the request you sent,
-what you got back, and what you expected.
+## Reporting
 
-Do not open a public issue for a security report.
+Email **support@maskbreak.com** with the subject `[SECURITY] <short title>`.
 
-We aim to acknowledge every report within three business days. There is no paid
-bug bounty at this time.
+Do not include live credentials, personal data, or an unredacted exploit in the
+first email — ask for an encrypted channel and one will be arranged after
+acknowledgement. Do not open a public issue, here or anywhere else, before a
+coordinated disclosure date is agreed.
 
-## Scope
+Acknowledgement target is **2 business days**, triage within 5. There is no
+paid bug-bounty programme; public credit and swag are offered instead.
 
-In scope:
+## What this org covers
 
-- The API at `maskbreak.com` — `/v1/evaluate`, `/v1/lookup`, and the account
-  and dashboard endpoints
-- The official SDKs: `@sentinelsup/sdk`, `sentinelsup` (PyPI),
-  `sentinelsup/sdk` (Packagist), `@sentinelsup/mcp`
-- `maskbreak.com` itself, including the console and authentication flows
+The published packages — `@sentinelsup/sdk`, `sentinelsup` (PyPI),
+`sentinelsup/sdk` (Packagist) and `@sentinelsup/mcp` — are in scope, as is the
+API they call. Only the latest release of each SDK receives fixes.
 
-Out of scope:
-
-- Reports from automated scanners with no demonstrated impact
-- Missing hardening headers with no exploitable consequence
-- Denial of service, volumetric or otherwise — please do not test this
-- Social engineering of our staff or customers
-- Detection evasion. Finding a way to make traffic look clean to our engine is
-  a product limitation, not a vulnerability. We are still interested, and
-  `support@maskbreak.com` is the right address, but it is not a security report.
-
-## Disclosure
-
-Please give us 90 days before publishing. We will credit you when the fix
-ships, unless you would rather stay anonymous.
-
-## Supported versions
-
-The API is versioned and additive — see the stability policy at
-[maskbreak.com/api](https://maskbreak.com/api). For the SDKs, only the latest
-release of each receives fixes.
+One thing worth stating before it arrives as a report: **detection evasion is
+not a vulnerability.** Finding a way to make traffic look clean to the engine
+is a product limitation. It is still worth telling us about, at the same
+address, but it is not a security issue and is not covered by safe harbour.
