@@ -1,133 +1,73 @@
 <p align="center">
-  <a href="https://maskbreak.com">
-    <img src="https://maskbreak.com/favicon.svg" width="72" height="72" alt="Maskbreak">
-  </a>
+  <a href="https://maskbreak.com"><img src="https://maskbreak.com/favicon.svg" width="56" height="56" alt="Maskbreak"></a>
 </p>
 
-<h1 align="center">Maskbreak</h1>
+<h1 align="center">See the visit. Understand the risk.</h1>
 
 <p align="center">
-  <strong>Real-time fraud detection that stops VPNs, residential proxies, antidetect browsers, and AI bots — in under 40 ms.</strong>
+  <strong>Network intelligence and browser signals for signup, login, and checkout.</strong>
 </p>
 
 <p align="center">
-  <a href="https://maskbreak.com">Website</a>
-  ·
-  <a href="https://maskbreak.com/api">API Docs</a>
-  ·
-  <a href="https://maskbreak.com/blog">Blog</a>
-  ·
-  <a href="https://maskbreak.com/signup">Free API Key</a>
+  <a href="https://maskbreak.com">Website</a> ·
+  <a href="https://maskbreak.com/api">API reference</a> ·
+  <a href="https://maskbreak.com/signup">Get a free API key</a> ·
+  <a href="https://maskbreak.com/blog">Guides</a>
 </p>
 
 ---
 
-## What is Maskbreak?
+## One visit. Signals you can act on.
 
-Maskbreak is a fraud detection API built for teams who've outgrown IP blocklists.
+**Maskbreak** helps developers assess suspicious visits before a sensitive action.
+Send a browser SDK token to your backend, evaluate it server-side, and use the
+returned `allow`, `review`, or `block` decision in your own policy.
 
-Modern attackers don't use datacenter VPNs anymore — they rent residential proxies, spoof browser fingerprints with Kameleo/GoLogin, and run automation at scale. Tools built around IP reputation (IPQS, SEON, Sift) miss most of that traffic.
+- **Network context:** VPNs, proxies, Tor, and cloud-server signals. Service names are returned **when known**.
+- **Browser context:** device fingerprints, signs of browser tampering, and automation signals.
+- **A reason behind the decision:** inspect the score and signals, not just a yes/no answer.
 
-Maskbreak combines network analysis with device fingerprinting to catch what they can't:
+A VPN alone calls for **review**, not a block. Signals are not proof of fraud.
+Bare-IP lookups cover Tor and cloud-server ranges; VPN/proxy attribution and
+device checks require an SDK-backed live visit.
 
-- 🏠 **Residential proxy detection** — BrightData, Smartproxy, IPRoyal, ShadowNode
-- 🎭 **Antidetect browser tampering** — Kameleo, GoLogin, AdsPower, Multilogin
-- 🤖 **Bot & automation detection** — Puppeteer, Playwright, Selenium, agentic AI
-- 🆔 **Persistent visitor ID** — survives incognito, VPN switching, cookie clears
-- 🌍 **<40 ms p95 globally** — runs in your critical path without slowing it down
+**Free tier:** 1,000 visitor checks per hour, no credit card.
+[See the current limits](https://maskbreak.com/pricing).
 
-## Free tier
+## Build with your stack
 
-1,000 requests per hour, every detection signal, no credit card.
+| Tool | Repository | Package |
+| :--- | :--- | :--- |
+| **Node.js SDK** | [maskbreak-node](https://github.com/sentinelsup/maskbreak-node) | [`@sentinelsup/sdk`](https://www.npmjs.com/package/@sentinelsup/sdk) |
+| **Python SDK** | [maskbreak-python](https://github.com/sentinelsup/maskbreak-python) | [`sentinelsup`](https://pypi.org/project/sentinelsup/) |
+| **PHP SDK** | [maskbreak-php](https://github.com/sentinelsup/maskbreak-php) | [`sentinelsup/sdk`](https://packagist.org/packages/sentinelsup/sdk) |
+| **MCP server** | [maskbreak-mcp](https://github.com/sentinelsup/maskbreak-mcp) | [`@sentinelsup/mcp`](https://www.npmjs.com/package/@sentinelsup/mcp) |
 
-→ [Get a key in 2 minutes](https://maskbreak.com/signup)
+The three server SDKs have no third-party runtime dependencies. All four
+projects are MIT licensed. Existing `sentinelsup` package names are preserved
+so integrations keep working.
 
-## Official SDKs
+## Start with a live-visit check
 
-| Language | Repository | Package |
-|----------|-----------|---------|
-| Node.js | [`maskbreak-node`](https://github.com/sentinelsup/maskbreak-node) | [![npm](https://img.shields.io/npm/v/@sentinelsup/sdk.svg?label=%40sentinelsup%2Fsdk)](https://www.npmjs.com/package/@sentinelsup/sdk) |
-| Python | [`maskbreak-python`](https://github.com/sentinelsup/maskbreak-python) | [![PyPI](https://img.shields.io/pypi/v/sentinelsup.svg?label=sentinelsup)](https://pypi.org/project/sentinelsup/) |
-| PHP | [`maskbreak-php`](https://github.com/sentinelsup/maskbreak-php) | [![Packagist](https://img.shields.io/packagist/v/sentinelsup/sdk.svg?label=sentinelsup%2Fsdk)](https://packagist.org/packages/sentinelsup/sdk) |
-| MCP server | [`maskbreak-mcp`](https://github.com/sentinelsup/maskbreak-mcp) | [![npm](https://img.shields.io/npm/v/@sentinelsup/mcp.svg?label=%40sentinelsup%2Fmcp)](https://www.npmjs.com/package/@sentinelsup/mcp) |
+1. [Create an API key](https://maskbreak.com/signup).
+2. Add the browser SDK to collect a visitor token.
+3. Send the token to your backend and evaluate it there—keep the API key off the client.
+4. Apply your own allow, review, or block policy before the protected action.
 
-The three SDKs are zero-dependency; everything here is MIT licensed. Package names keep the
-`sentinelsup` prefix from before the rename — renaming a published package
-breaks every existing install.
+**[Follow the integration guide →](https://maskbreak.com/api)**
+Node.js, Python, and PHP examples live in their repositories.
+For an AI-assisted setup, use the [integration reference](https://maskbreak.com/integrate.md).
 
-## Quick start
+## Put it to work
 
-**Node.js**
+[Account takeover protection](https://maskbreak.com/blog/account-takeover-endpoints) ·
+[Signup abuse](https://maskbreak.com/blog/oauth-signup-fraud) ·
+[Public-interest program](https://maskbreak.com/public-interest)
 
-```bash
-npm install @sentinelsup/sdk
-```
+## Support & security
 
-```js
-const Sentinel = require('@sentinelsup/sdk');
-const sentinel = new Sentinel({ apiKey: process.env.SENTINEL_KEY });
+[Contact support](https://maskbreak.com/contact) ·
+[Service status](https://maskbreak.com/status) ·
+[Report a vulnerability privately](https://maskbreak.com/responsible-disclosure)
 
-const result = await sentinel.evaluate({ token: req.body.sentinelToken });
-if (result.decision === 'block') return res.status(403).end();
-```
-
-**Python**
-
-```bash
-pip install sentinelsup
-```
-
-```python
-from sentinel import Sentinel
-
-sentinel = Sentinel()  # reads SENTINEL_KEY
-result = sentinel.evaluate(token=request.json["sentinelToken"])
-if result.decision == "block":
-    abort(403)
-```
-
-**PHP**
-
-```bash
-composer require sentinelsup/sdk
-```
-
-```php
-$sentinel = new \Sentinel\Client();   // reads SENTINEL_KEY
-$result = $sentinel->evaluate(['token' => $_POST['sentinelToken']]);
-if ($result->isBlocked()) {
-    http_response_code(403);
-    exit;
-}
-```
-
-**Any other stack** — point your AI coding assistant at
-[`maskbreak.com/integrate.md`](https://maskbreak.com/integrate.md) and it wires the
-integration for you, or call `POST /v1/evaluate` directly ([API docs](https://maskbreak.com/api)).
-
-## Where Maskbreak fits
-
-| Use case | What it stops |
-|----------|---------------|
-| [Stripe checkout](https://maskbreak.com/blog/card-testing-attacks) | Card testing, chargeback-prone sessions |
-| [Shopify drops](https://maskbreak.com/blog/shopify-bot-detection) | Sneaker bots, scalpers, scrapers |
-| [SaaS signup](https://maskbreak.com/blog/oauth-signup-fraud) | Multi-accounting, bonus abuse, fake Google sign-ins |
-| [Fintech KYC](https://maskbreak.com/case-studies/fintech-fake-accounts) | Synthetic identities, proxy-masked applications |
-
-## Comparisons
-
-[vs IPQS](https://maskbreak.com/vs/ipqs) ·
-[vs SEON](https://maskbreak.com/vs/seon) ·
-[vs Sift](https://maskbreak.com/vs/sift) ·
-[vs Kount](https://maskbreak.com/vs/kount) ·
-[vs minFraud](https://maskbreak.com/vs/minfraud)
-
-## Contact
-
-- 🐦 [@MaskbreakSup on X](https://x.com/MaskbreakSup)
-- 📬 [support@maskbreak.com](mailto:support@maskbreak.com)
-- 📊 [Status page](https://maskbreak.com/status)
-
----
-
-<sub>© Sentinel Edge Networks LTD · Registered in England &amp; Wales 17150600 · London, UK</sub>
+<sub>Built by <a href="https://github.com/kaspartomson20-alt">Kaspar Tomson</a> · Sentinel Edge Networks LTD · England &amp; Wales 17150600</sub>
